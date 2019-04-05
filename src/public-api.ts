@@ -4,3 +4,4 @@
 
 export * from './lib/ngx-map.module';
 export * from './lib/mapster/mapster';
+export * from './lib/ngx-map.config';
