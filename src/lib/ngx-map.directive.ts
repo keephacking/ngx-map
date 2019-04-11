@@ -163,6 +163,7 @@ export class NgxMapDirective implements OnInit,OnChanges {
   }
 
   private async initMap(): Promise<any> {
+    console.log("init map");
     // fix center
     let position;
     if (this.viewMarker) {
@@ -176,7 +177,7 @@ export class NgxMapDirective implements OnInit,OnChanges {
         lng: coords.longitude
       };
     }
-
+    console.log(position);
     this.options = { ...this.options, center: new google.maps.LatLng(position.lat, position.lng) };
 
     return new Promise((resolve, reject) => {
@@ -197,18 +198,19 @@ export class NgxMapDirective implements OnInit,OnChanges {
   }
   getPosition = () => {
     return new Promise((resolve, reject) => {
-      if (navigator && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          position => {
-            resolve(position.coords);
-          },
-          err => {
-            reject(err);
-          }
-        );
-      } else {
-        reject("Navigator.geolocation not supported for getting current position");
-      }
+      resolve({latitude:8.743775,longitude:76.716805});
+      // if (navigator && navigator.geolocation) {
+      //   navigator.geolocation.getCurrentPosition(
+      //     position => {
+      //       resolve(position.coords);
+      //     },
+      //     err => {
+      //       reject(err);
+      //     }
+      //   );
+      // } else {
+      //   reject("Navigator.geolocation not supported for getting current position");
+      // }
     });
   };
 }
