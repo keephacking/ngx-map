@@ -1,8 +1,8 @@
 import { Directive, Renderer2, ElementRef, Inject, Input, Output, EventEmitter, OnInit, OnChanges, SimpleChanges } from "@angular/core";
-import { DOCUMENT } from "@angular/platform-browser";
 import { NGX_MAP_KEY } from "./ngx-map.config";
 import { Network } from "./ngx-network";
 import { Mapster } from './mapster/mapster';
+import { DOCUMENT } from '@angular/common';
 
 declare var google: any;
 export class MapStatus {
